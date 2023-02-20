@@ -11,7 +11,7 @@ import ScrollToTop from 'react-scroll-to-top';
 export default function Home() {
   const [data,setData] = useState()
 
-  const api_key = NASA_API_KEY
+  const api_key = process.env.NASA_API_KEY
   const url = `https://api.nasa.gov/techtransfer/patent/?q=10&engine&api_key=${api_key}`
   const getTechTransferData = async () => {
     const res = await axios.get(url);

@@ -2,7 +2,6 @@ import axios from 'axios';
 import { useEffect, useState} from 'react';
 import Image from 'next/image';
 import NavBar from '@/components/NavBar';
-import NASA_API_KEY from '.env'
 
 export default function Polychromatic() {
        const [image, setImage] = useState([]);
@@ -13,7 +12,7 @@ export default function Polychromatic() {
        const [isHovered, setIsHovered] = useState(false);
 
 
-       const api_key = NASA_API_KEY
+       const api_key = process.env.NASA_API_KEY
        const url = `https://epic.gsfc.nasa.gov/api/natural?api_key=${api_key}`
        
        const getPolychromaticData = async () => {
